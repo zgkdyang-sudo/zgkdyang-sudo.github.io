@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Haoyang Zou — undergraduate in the Talent Program in Artificial Intelligence at the University of Science and Technology of China. Projects, awards, research interests, and experience.">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>Haoyang Zou | USTC</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --paper: #ffffff;
+      --text: #18243b;
+      --subtle: #4d5c75;
+      --muted: #6c7990;
+      --accent: #294db0;
+      --accent-light: #eef2ff;
+      --line: #e3e9f3;
+      --shadow: 0 12px 40px rgba(24, 36, 59, .045);
+      --radius: 18px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font: 16px/1.72 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse 48% 23% at 90% 4%, #e8edff 0%, transparent 100%),
+        radial-gradient(ellipse 40% 18% at 0% 30%, #eef7ff 0%, transparent 100%),
+        var(--bg);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid #99b1ff; outline-offset: 4px; }
+    .container { width: min(100% - 44px, 1020px); margin: 0 auto; }
+    header { border-bottom: 1px solid rgba(227,233,243,.8); background: rgba(255,255,255,.67); }
+    .nav { min-height: 72px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .wordmark { font-size: 17px; font-weight: 790; letter-spacing: -.035em; color: var(--text); }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { color: var(--subtle); font-size: 14px; font-weight: 600; }
+    main { padding-bottom: 65px; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 290px; align-items: center; gap: 50px; padding: 82px 0 70px; }
+    .eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { margin: 12px 0 15px; font-size: clamp(45px, 6vw, 68px); line-height: 1.09; font-weight: 800; letter-spacing: -.065em; }
+    .hero .intro { font-size: 20px; color: var(--subtle); line-height: 1.65; max-width: 680px; margin: 0 0 18px; }
+    .hero .summary { color: var(--muted); margin: 0 0 20px; max-width: 680px; }
+    .hero .welcome { color: var(--accent); font-weight: 700; margin: 0; }
+    .portrait {
+      width: 290px; aspect-ratio: 4 / 5; border-radius: 28px;
+      background: #dfe7ff; overflow: hidden; position: relative;
+      box-shadow: 0 25px 50px rgba(37,67,151,.16);
+      border: 1px solid rgba(227,233,243,.95);
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .section { margin-top: 25px; padding-top: 35px; scroll-margin-top: 28px; }
+    .section-heading { display: flex; gap: 12px; align-items: center; margin: 0 0 22px; }
+    .section-heading::before { content: ""; display: block; width: 4px; height: 23px; background: var(--accent); border-radius: 8px; }
+    h2 { font-size: 25px; line-height: 1.3; letter-spacing: -.035em; margin: 0; }
+    h3 { font-size: 18px; letter-spacing: -.017em; line-height: 1.42; margin: 0; }
+    p { margin: 0; }
+    .about-card, .project, .award, .education, .research-card {
+      background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: var(--radius);
+    }
+    .about-card, .research-card { padding: 26px 30px; color: var(--subtle); }
+    .education { display: flex; align-items: flex-start; gap: 19px; padding: 25px 28px; }
+    .uni-mark { display: grid; place-items: center; width: 55px; height: 55px; flex: 0 0 55px; border-radius: 14px; background: var(--accent-light); color: var(--accent); font-size: 19px; font-weight: 850; }
+    .education p { color: var(--subtle); margin-top: 5px; }
+    .education .minor { color: var(--muted); font-size: 14px; margin-top: 8px; }
+    .interest-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .interest-pill {
+      display: inline-flex; align-items: center; padding: 9px 14px;
+      border-radius: 999px; background: var(--accent-light); color: var(--accent);
+      font-size: 14px; font-weight: 700;
+    }
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .project { padding: 23px; min-height: 250px; display: flex; flex-direction: column; }
+    .project p { color: var(--subtle); font-size: 14px; margin-top: 12px; }
+    .project .tag { margin-top: auto; align-self: flex-start; }
+    .project .meta { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-size: 11px; font-weight: 700; margin: 0 0 13px; }
+    .tag { display: inline-block; background: var(--accent-light); border-radius: 100px; padding: 5px 11px; font-size: 11px; font-weight: 800; color: var(--accent); margin-top: 18px; }
+    .award-list { display: grid; gap: 12px; }
+    .award { display: grid; grid-template-columns: 106px 1fr; gap: 20px; padding: 19px 23px; }
+    .date { color: var(--accent); font-size: 13px; font-weight: 760; padding-top: 3px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .award h3 { font-size: 16px; }
+    .award p { font-size: 14px; color: var(--subtle); margin-top: 5px; }
+    .award strong { color: #24489e; }
+    footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 24px 0 35px; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr 250px; gap: 32px; }
+      .portrait { width: 250px; }
+    }
+    @media (max-width: 760px) {
+      .hero { padding: 55px 0 44px; gap: 24px; grid-template-columns: 1fr; }
+      .portrait { grid-row: 1; width: min(100%, 280px); border-radius: 22px; }
+      .projects { grid-template-columns: 1fr; }
+      .project { min-height: 0; }
+      .nav { padding: 14px 0; flex-wrap: wrap; }
+      nav { gap: 16px; }
+      .award { grid-template-columns: 1fr; gap: 2px; }
+      .education { padding: 21px; }
+      .about-card, .research-card { padding: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="wordmark" href="#home">Haoyang Zou</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#honors">Honors &amp; Awards</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero" aria-labelledby="intro-heading">
+      <div>
+        <div class="eyebrow">Undergraduate · Artificial Intelligence · USTC</div>
+        <h1 id="intro-heading">Haoyang Zou</h1>
+        <p class="intro">Second-year undergraduate student in the <strong>Talent Program in Artificial Intelligence</strong> at the <strong>University of Science and Technology of China (USTC)</strong>.</p>
+        <p class="summary">Interested in building AI-powered experiences that connect intelligent technology with creative, meaningful applications. My current primary research interests are <strong>Agent Safety</strong> and <strong>Agent Security</strong>.</p>
+        <p class="welcome">Welcome to connect and exchange ideas!</p>
+      </div>
+      <div class="portrait">
+        <img src="haoyang-zou-photo.jpg" alt="Haoyang Zou giving a presentation on stage">
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="section-heading"><h2 id="about-heading">About Me</h2></div>
+      <div class="about-card">
+        <p>I am a second-year undergraduate at USTC, studying in its Talent Program in Artificial Intelligence. My experiences span AI agents, immersive educational products, and generative AI applications. I enjoy turning ideas into working projects and collaborating with others to bring them to life. I am also actively exploring research problems related to the reliability, safety, and security of intelligent agents.</p>
+      </div>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <div class="section-heading"><h2 id="research-heading">Research Interests</h2></div>
+      <div class="research-card">
+        <p>My current primary research directions are:</p>
+        <div class="interest-list" aria-label="Research interest tags">
+          <span class="interest-pill">Agent Safety</span>
+          <span class="interest-pill">Agent Security</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
+      <div class="education">
+        <div class="uni-mark" aria-hidden="true">USTC</div>
+        <div>
+          <h3>University of Science and Technology of China (USTC)</h3>
+          <p>Talent Program in Artificial Intelligence</p>
+          <p class="minor">Undergraduate Student · Second Year</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-heading"><h2 id="projects-heading">Selected Projects</h2></div>
+      <div class="projects">
+        <article class="project">
+          <p class="meta">Sep 2026 · Project Lead</p>
+          <h3>AI-Generated Immersive Picture-Book Game</h3>
+          <p>Led the project proposal and secured RMB 100,000 in support from the USTC Huami Innovation and Entrepreneurship Fund. The project was approved for funding in September 2026.</p>
+          <span class="tag">RMB 100,000 Funding</span>
+        </article>
+        <article class="project">
+          <p class="meta">Mar 2026 · Team Leader</p>
+          <h3>Boonie Bears Adventure</h3>
+          <p>Led the design and development of an AI-powered immersive educational product. Won first place in its track at the USTC regional round of the 2026 AI Hackathon Tour University League, organized by ModelScope and Datawhale.</p>
+          <span class="tag">Track Champion</span>
+        </article>
+        <article class="project">
+          <p class="meta">Dec 2025 · AI Agent</p>
+          <h3>Emotion Decoding Agent</h3>
+          <p>An AI agent project recognized as the No. 1 Most Popular AI Agent at the 2025 Soul App Yuanchuang Camp University AI Agent Innovation Competition.</p>
+          <span class="tag">Most Popular Agent · 1st</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="honors" aria-labelledby="honors-heading">
+      <div class="section-heading"><h2 id="honors-heading">Honors &amp; Awards</h2></div>
+      <div class="award-list">
+        <article class="award">
+          <div class="date">Sep 2026</div>
+          <div><h3>National Scholarship</h3><p>Became the first second-year undergraduate in the history of my college to receive the National Scholarship.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">Sep 2026</div>
+          <div><h3>Huami Innovation and Entrepreneurship Fund · <strong>RMB 100,000</strong></h3><p>As project lead, secured funding for the <em>AI-Generated Immersive Picture-Book Game</em> project, which was officially approved.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">Jun 2026</div>
+          <div><h3>SenseTime Scholarship · <strong>Most Promising Award</strong></h3><p>Recipient of the Most Promising Award under the SenseTime Scholarship program.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">Mar 2026</div>
+          <div><h3>2026 AI Hackathon Tour University League (USTC Regional) · <strong>Track Champion</strong></h3><p>Led the team behind <em>Boonie Bears Adventure</em>, an AI-powered immersive educational product, in the event organized by ModelScope and Datawhale.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">Dec 2025</div>
+          <div><h3>Soul App Yuanchuang Camp University AI Agent Innovation Competition · <strong>1st in Popularity</strong></h3><p>The project <em>Emotion Decoding Agent</em> ranked first in the Most Popular AI Agent category.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">2025</div>
+          <div><h3>Outstanding High School Student of Shandong Province</h3><p>Recognized with the provincial Outstanding High School Student honor.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">2023</div>
+          <div><h3>National Primary and Secondary School IT Innovation and Practice Competition (NOC) · <strong>First Prize</strong></h3><p>First Prize in the AI Visionary selection round.</p></div>
+        </article>
+        <article class="award">
+          <div class="date">2021</div>
+          <div><h3>3rd Shandong Youth Creative Programming and Intelligent Design Competition · <strong>Provincial 1st Place</strong></h3><p>Ranked first in Shandong Province in the Python category (Junior High School Division).</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Haoyang Zou</span>
+      <span>Built with HTML &amp; CSS · Hosted with GitHub Pages</span>
+    </div>
+  </footer>
+</body>
+</html>
